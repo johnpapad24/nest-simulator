@@ -143,7 +143,6 @@ def from_file_pandas(fname, delimiter="\t", no_metadata=False, **kwargs):
         head = 0
     for f in fname:
         # pylint: disable=possibly-used-before-assignment
-
         dataFrame = pandas.read_table(f, delimiter=delimiter, header=head, skipinitialspace=True)
         newdata = dataFrame.values
 
