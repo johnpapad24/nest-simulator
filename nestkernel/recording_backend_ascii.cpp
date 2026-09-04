@@ -377,7 +377,6 @@ nest::RecordingBackendASCII::DeviceData::open_file_omp()
     LOG( VerbosityLevel::ERROR, "RecordingBackendASCII::prepare()", msg );
     throw IOError();
   }
-  // file_ << std::fixed << std::setprecision( precision_ );
 }
 
 
