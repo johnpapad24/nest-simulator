@@ -721,7 +721,6 @@ const std::string wfr_tol( "wfr_tol" );
 const std::string with_reset( "with_reset" );
 const std::string write_to_single_file( "write_to_single_file" );
 
-
 const std::string x( "x" );
 const std::string x_bar( "x_bar" );
 
