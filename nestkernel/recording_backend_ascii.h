@@ -150,8 +150,6 @@ write_single_file
   this option in large distributed systems may result in considerable simulation
   slowdowns especially when using the *"Syncronous"* option.
   (default *"Off"*).
-
-
 EndUserDocs */
 
 namespace nest
