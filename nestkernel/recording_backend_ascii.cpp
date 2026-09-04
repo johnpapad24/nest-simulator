@@ -234,7 +234,6 @@ nest::RecordingBackendASCII::DeviceData::DeviceData( std::string modelname, std:
   , label_( "" )
   , no_metadata_( false )
   , write_to_single_file_( "Off" )
-//, write_mutex_(std::make_unique<std::mutex>())
 {
 }
 
