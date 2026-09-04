@@ -231,7 +231,6 @@ public:
    */
   size_t get_rport() const;
 
-
   /**
    * Set the port number.
    *
