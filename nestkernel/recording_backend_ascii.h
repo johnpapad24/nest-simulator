@@ -25,7 +25,6 @@
 
 // C++ includes:
 #include <fstream>
-#include <mutex>
 
 #include "recording_backend.h"
 
