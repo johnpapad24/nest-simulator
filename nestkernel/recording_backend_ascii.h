@@ -142,12 +142,12 @@ no_header
   the header comment containing information about nest and backend versions
   and etc. (default *false*).
 
-write_single_file
+write_to_single_file
   A string value that gives the user the option to write in a single file
   from mutiple threads and processes either by keeing the time order of the file
-  (*"Syncronous" *option) or not (*"Asyncronous"* option). Please note the using
+  (*"Synchronous" *option) or not (*"Asynchronous"* option). Please note the using
   this option in large distributed systems may result in considerable simulation
-  slowdowns especially when using the *"Syncronous"* option.
+  slowdowns especially when using the *"Synchronous"* option.
   (default *"Off"*).
 EndUserDocs */
 
