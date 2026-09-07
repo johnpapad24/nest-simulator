@@ -118,7 +118,7 @@ class TestRecordingBackendASCII(unittest.TestCase):
                 "file_extension": "csv",
                 "delimiter": ",",
                 "no_metadata": True,
-                "write_to_single_file": "Asyncronous",
+                "write_to_single_file": "Asynchronous",
             },
         )
         mm.set({"interval": 0.1, "record_from": ["V_m"]})
@@ -146,7 +146,7 @@ class TestRecordingBackendASCII(unittest.TestCase):
                 "file_extension": "csv",
                 "delimiter": ",",
                 "no_metadata": True,
-                "write_to_single_file": "Syncronous",
+                "write_to_single_file": "Synchronous",
             },
         )
         mm.set({"interval": 0.1, "record_from": ["V_m"]})
