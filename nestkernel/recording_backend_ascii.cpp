@@ -33,7 +33,6 @@
 #include "recording_device.h"
 #include "vp_manager_impl.h"
 
-
 const unsigned int nest::RecordingBackendASCII::ASCII_REC_BACKEND_VERSION = 2;
 
 nest::RecordingBackendASCII::RecordingBackendASCII()
@@ -303,14 +302,14 @@ nest::RecordingBackendASCII::DeviceData::open_file()
     }
     file_ << std::endl;
   }
-  else if ( write_to_single_file_ == "Asyncronous" || write_to_single_file_ == "Syncronous" )
+  else if ( write_to_single_file_ == "Asynchronous" || write_to_single_file_ == "Synchronous" )
   {
     open_file_omp();
   }
   else
   {
     std::string msg = String::compose( "write_to_single_file: Unsupported option given.",
-      "Supported options are: \"Off\", \"Syncronous\",\"Asyncronous\"." );
+      "Supported options are: \"Off\", \"Synchronous\",\"Asynchronous\"." );
     LOG( VerbosityLevel::ERROR, "RecordingBackendASCII::prepare()", msg );
     throw IOError();
   }
@@ -422,9 +421,8 @@ nest::RecordingBackendASCII::DeviceData::write( const Event& event,
     line << delimiter_ << val;
   }
   line << "\n";
-  // std::lock_guard<std::mutex> lock(*write_mutex_);
 
-  if ( write_to_single_file_ == "Syncronous" )
+  if ( write_to_single_file_ == "Synchronous" )
   {
 #pragma omp critical
     {
@@ -434,7 +432,6 @@ nest::RecordingBackendASCII::DeviceData::write( const Event& event,
   }
   else
   {
-    // std::lock_guard<std::mutex> lock(*write_mutex_);
     file_ << line.str();
   }
 }

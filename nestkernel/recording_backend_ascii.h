@@ -25,7 +25,6 @@
 
 // C++ includes:
 #include <fstream>
-
 #include "recording_backend.h"
 
 /* BeginUserDocs: NOINDEX
@@ -149,6 +148,8 @@ write_to_single_file
   this option in large distributed systems may result in considerable simulation
   slowdowns especially when using the *"Synchronous"* option.
   (default *"Off"*).
+
+
 EndUserDocs */
 
 namespace nest
@@ -211,6 +212,7 @@ private:
   const std::string compute_vp_node_id_string_( const RecordingDevice& device ) const;
   struct DeviceData
   {
+    // std::unique_ptr<std::mutex> write_mutex_;
     DeviceData() = delete;
     DeviceData( std::string, std::string );
     void set_value_names( const std::vector< std::string >&, const std::vector< std::string >& );
