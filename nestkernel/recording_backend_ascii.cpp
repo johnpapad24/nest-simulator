@@ -421,8 +421,11 @@ nest::RecordingBackendASCII::DeviceData::write( const Event& event,
     line << delimiter_ << val;
   }
   line << "\n";
-
-  if ( write_to_single_file_ == "Synchronous" )
+  if ( write_to_single_file_ == "Asynchronous" )
+  {
+      file_ << line.str() << std::flush;
+  }
+  else if ( write_to_single_file_ == "Synchronous" )
   {
 #pragma omp critical
     {
